@@ -17,3 +17,8 @@ Le fichier `_headers` configure les principaux en-têtes statiques.
 ## Point d’entrée
 
 `index.html`
+
+
+## Correctif 1.0.1 — images Cloudflare
+
+Les reproductions patrimoniales et le portrait sont désormais intégrés directement dans les pages HTML sous forme de données embarquées. Elles ne dépendent donc plus de chemins relatifs, de la casse des noms de fichiers ou de la présence du dossier `assets` lors du déploiement. Les fichiers JPEG originaux restent présents dans le projet pour archivage et réutilisation éditoriale.
