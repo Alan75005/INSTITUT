@@ -30,3 +30,7 @@ Les œuvres picturales sont servies comme de vrais fichiers JPEG dans `assets/ar
 
 ## Correctif 1.0.3 — portrait mobile
 Le portrait de la page d’accueil utilise désormais le fichier `alan-yvon.jpg` plutôt qu’une donnée Base64. Le bloc « À propos » a été recomposé sur mobile avec un portrait circulaire discret (92 px sur iPhone), placé à côté du titre, afin que le contenu reste visible dès le premier écran.
+
+
+## V1.1 — Les Regards
+Ajout d’un index `regards.html`, de trois nouveaux Regards et d’un sous-menu complet dans la navigation.
