@@ -22,3 +22,8 @@ Le fichier `_headers` configure les principaux en-têtes statiques.
 ## Correctif 1.0.1 — images Cloudflare
 
 Les reproductions patrimoniales et le portrait sont désormais intégrés directement dans les pages HTML sous forme de données embarquées. Elles ne dépendent donc plus de chemins relatifs, de la casse des noms de fichiers ou de la présence du dossier `assets` lors du déploiement. Les fichiers JPEG originaux restent présents dans le projet pour archivage et réutilisation éditoriale.
+
+
+## Correctif 1.0.2 — Safari iPhone
+
+Les œuvres picturales sont servies comme de vrais fichiers JPEG dans `assets/art/`. Les longues URI Base64 ont été supprimées afin d’assurer leur affichage fiable dans Safari iOS, GitHub et Cloudflare Pages.
