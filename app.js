@@ -1,1 +1,22 @@
-const menu=document.querySelector('.menu');const nav=document.querySelector('#nav');if(menu&&nav){menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}));document.addEventListener('keydown',e=>{if(e.key==='Escape'){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}});}const dialog=document.querySelector('#discernment-dialog');document.querySelector('[data-dialog-open]')?.addEventListener('click',()=>dialog?.showModal());document.querySelector('[data-dialog-close]')?.addEventListener('click',()=>dialog?.close());const facts=document.querySelector('#facts');const status=document.querySelector('.status');if(facts)facts.value=localStorage.getItem('institut-facts')||'';document.querySelector('.save')?.addEventListener('click',()=>{localStorage.setItem('institut-facts',facts.value.trim());status.textContent='Votre réflexion a été enregistrée sur cet appareil.';});
+const menu = document.querySelector('.menu');
+const nav = document.querySelector('#nav');
+if (menu && nav) {
+  menu.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    menu.setAttribute('aria-expanded', String(open));
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menu.setAttribute('aria-expanded', 'false');
+  }));
+}
+const dialog = document.querySelector('#discernment-dialog');
+document.querySelector('[data-dialog-open]')?.addEventListener('click', () => dialog?.showModal());
+document.querySelector('[data-dialog-close]')?.addEventListener('click', () => dialog?.close());
+const facts = document.querySelector('#facts');
+const status = document.querySelector('.status');
+if (facts) facts.value = localStorage.getItem('institut-facts') || '';
+document.querySelector('.save')?.addEventListener('click', () => {
+  localStorage.setItem('institut-facts', facts.value.trim());
+  status.textContent = 'Votre réflexion a été enregistrée sur cet appareil.';
+});
