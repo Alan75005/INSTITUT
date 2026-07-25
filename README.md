@@ -1,59 +1,29 @@
-# L’Institut V3 — Édition fondatrice
+# L’Institut — V3.1
 
-Site statique prêt pour GitHub et Cloudflare Pages.
+Version éditoriale fondatrice, prête pour GitHub et Cloudflare Pages.
 
 ## Mise en ligne
 
-1. Décompressez le ZIP.
-2. Déposez **le contenu du dossier** à la racine de votre dépôt GitHub.
-3. Dans Cloudflare Pages :
-   - Framework preset : `None`
-   - Build command : laisser vide
-   - Build output directory : `.`
-4. Déployez.
+1. Décompresser le ZIP.
+2. Dans le dépôt GitHub, remplacer les anciens fichiers par tout le contenu de ce dossier.
+3. Valider avec **Commit changes**.
+4. Cloudflare Pages redéploie automatiquement le dernier commit.
 
-## À personnaliser avant publication
+## Fichiers
 
-### Portrait
-Ajoutez une image nommée `portrait.jpg`, puis remplacez dans `index.html` le bloc :
+- `index.html` : contenu et structure
+- `styles.css` : direction artistique et responsive
+- `app.js` : menu mobile et amorce d’entretien
+- `assets/alan-yvon.jpg` : portrait intégré
 
-```html
-<div class="portrait-placeholder">...</div>
-```
+## V3.1
 
-par :
-
-```html
-<img class="portrait-photo" src="portrait.jpg" alt="Alan Yvon">
-```
-
-Ajoutez dans `styles.css` :
-
-```css
-.portrait-photo { width:100%; height:100%; object-fit:cover; object-position:center; }
-```
-
-### Rendez-vous
-Dans `index.html`, remplacez :
-
-`contact@votre-domaine.fr`
-
-par votre adresse professionnelle, ou remplacez le lien `mailto:` par votre lien Calendly/Cal.com.
-
-## Fonctionnalités incluses
-
-- Accueil éditorial avec emplacement portrait
-- Regard de la semaine
-- Sources et recommandations
-- Réflexion sauvegardée dans le navigateur
-- Entretien guidé en cinq étapes
-- Dossier de discernement imprimable en PDF
-- Double sortie : réflexion autonome ou demande d’entretien
-- Bibliothèque de trois fiches
-- Responsive mobile
-- Déploiement statique sans commande de build
-
-## Limite du prototype
-
-L’entretien est actuellement scénarisé dans le navigateur. Il ne s’agit pas encore d’une IA connectée.  
-Pour une version publique avec IA, il faudra ajouter une API côté serveur, une politique de confidentialité, un cadre de conservation des données et des garde-fous adaptés aux situations sensibles.
+- portrait circulaire discret
+- nouvelle page d’accueil
+- premier Regard complet
+- références scientifiques annotées
+- passages repères et synthèses de thèses
+- objections et nuances
+- méthode de L’Institut
+- bibliothèque annotée
+- entretien de discernement local

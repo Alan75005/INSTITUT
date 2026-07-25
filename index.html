@@ -3,302 +3,232 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4efe5">
-  <meta name="description" content="L’Institut — Revue et entretiens de discernement éducatif pour les parents.">
-  <title>L’Institut — Édition fondatrice</title>
+  <meta name="description" content="L’Institut — revue du discernement éducatif. Expérience de terrain, recherche scientifique et grands textes.">
+  <title>L’Institut — Revue du discernement éducatif</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
-
-  <header class="site-header">
-    <a class="wordmark" href="#accueil" aria-label="Retour à l’accueil">L’INSTITUT</a>
-    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
-    <nav id="siteNav" class="site-nav" aria-label="Navigation principale">
+  <header class="masthead">
+    <a class="brand" href="#accueil" aria-label="Accueil de L’Institut">
+      <span class="brand-main">L’INSTITUT</span>
+      <span class="brand-sub">Revue du discernement éducatif</span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" class="main-nav" aria-label="Navigation principale">
       <a href="#regard">Le Regard</a>
-      <a href="#entretien">L’entretien</a>
-      <a href="#bibliotheque">La bibliothèque</a>
-      <a href="#manifeste">Le manifeste</a>
+      <a href="#methode">La méthode</a>
+      <a href="#bibliotheque">Bibliothèque</a>
+      <a href="#entretien">Entretien</a>
     </nav>
   </header>
 
   <main>
-    <section id="accueil" class="hero">
-      <div class="portrait-panel">
-        <div class="portrait-placeholder" role="img" aria-label="Emplacement réservé à la photographie d’Alan Yvon">
-          <div class="portrait-monogram">AY</div>
-          <p>Votre portrait</p>
-          <small>Remplacez <strong>portrait.jpg</strong> dans le dossier du site.</small>
-        </div>
+    <section id="accueil" class="hero page-grid">
+      <div class="portrait-wrap">
+        <img src="assets/alan-yvon.jpg" alt="Portrait d’Alan Yvon" class="portrait">
+        <p class="portrait-caption">Alan Yvon<br><span>Chef d’établissement · Fondateur</span></p>
       </div>
-
-      <div class="hero-editorial">
-        <p class="kicker">Revue et entretiens de discernement éducatif</p>
-        <h1>Former le jugement<br>avant de donner<br>des réponses.</h1>
-        <div class="signature-line"></div>
-        <p class="editorial">
-          Depuis près de trente ans, j’enseigne. Depuis près de vingt ans, je dirige des établissements scolaires.
-          J’ai reçu des milliers de familles. Avec le temps, une conviction s’est imposée&nbsp;:
-          les parents ne manquent pas d’amour. Ils manquent parfois d’un lieu où penser.
-        </p>
-        <p class="editorial">
-          L’Institut est né de cette idée. Non pour distribuer des recettes, mais pour aider chacun à regarder
-          une situation éducative avec davantage de lucidité, de culture et de sérénité.
-        </p>
-        <div class="editorial-signature">
-          <strong>Alan Yvon</strong>
-          <span>Directeur d’établissement scolaire</span>
-        </div>
-        <a class="button button-primary" href="#regard">Entrer dans le Regard de la semaine</a>
+      <div class="hero-copy">
+        <p class="eyebrow">Édition fondatrice · 2026</p>
+        <h1>Former le jugement<br>des parents.</h1>
+        <p class="lead">Chaque semaine, une question éducative est examinée à la lumière de l’expérience de terrain, de la recherche scientifique et des grands textes.</p>
+        <a class="primary-cta" href="#regard">Entrer dans le Regard de la semaine <span>→</span></a>
       </div>
     </section>
 
-    <section id="regard" class="article-shell">
-      <header class="article-header">
-        <p class="issue">LE REGARD · N° 01</p>
-        <h2>Le courage de laisser<br>son enfant échouer</h2>
-        <p class="dek">Une scène vécue, un éclairage scientifique et une invitation à décider sans céder à l’urgence.</p>
-        <div class="article-meta">
-          <span>12 minutes de lecture</span>
-          <span>Échec · confiance · autonomie</span>
-        </div>
-      </header>
-
-      <figure class="feature-image">
-        <div class="image-composition" aria-label="Illustration abstraite d’un bureau calme">
-          <span class="window"></span>
-          <span class="desk"></span>
-          <span class="book book-one"></span>
-          <span class="book book-two"></span>
-          <span class="chair"></span>
-        </div>
-        <figcaption>Dans un bureau, l’urgence du parent n’est pas toujours l’urgence éducative.</figcaption>
-      </figure>
-
-      <article class="article-body">
-        <p class="dropcap">Une mère est entrée dans mon bureau avec une copie froissée à la main. Son fils venait d’obtenir 8 sur 20. Elle voulait écrire au professeur, demander une seconde évaluation, comprendre ce qui avait «&nbsp;dysfonctionné&nbsp;».</p>
-
-        <p>La note était réelle. Son inquiétude aussi. Mais la première décision utile n’était pas forcément d’intervenir. Elle consistait à distinguer l’événement de ce qu’il réveillait&nbsp;: la peur du décrochage, la crainte d’une perte de confiance, le sentiment de ne pas avoir protégé son enfant.</p>
-
-        <blockquote>
-          «&nbsp;Ne retirez pas trop vite à un enfant une difficulté qu’il peut apprendre à surmonter.&nbsp;»
-        </blockquote>
-
-        <h3>I. Observer avant d’agir</h3>
-        <p>Une difficulté scolaire appelle parfois une action rapide. Mais elle appelle souvent, d’abord, une observation précise. Est-elle ponctuelle&nbsp;? Se répète-t-elle&nbsp;? L’enfant comprend-il ce qui s’est passé&nbsp;? Dispose-t-il encore de moyens d’action&nbsp;?</p>
-
-        <div class="margin-note">
-          <span class="note-number">01</span>
-          <p><strong>Le discernement commence par une séparation.</strong><br>Les faits, les émotions, les interprétations et les décisions ne sont pas une seule et même chose.</p>
-        </div>
-
-        <h3>II. Ce que suggère la recherche</h3>
-        <p>Les travaux consacrés aux théories implicites de l’intelligence invitent à prêter attention au sens donné à l’erreur. Un échec n’est pas automatiquement formateur&nbsp;: il le devient lorsqu’il peut être compris, relié à des stratégies et suivi d’une possibilité d’agir.</p>
-
-        <div class="research-card">
-          <p class="card-label">Éclairage scientifique</p>
-          <h4>La manière de parler de l’effort compte davantage qu’un encouragement abstrait.</h4>
-          <p>Une étude longitudinale a associé les éloges centrés sur les processus — effort, stratégie, persévérance — à des conceptions plus évolutives des capacités chez l’enfant.</p>
-          <a href="#source-1">Voir la référence complète</a>
-        </div>
-
-        <h3>III. Le détour stoïcien</h3>
-        <p>Épictète ouvre son <em>Manuel</em> par une distinction radicale&nbsp;: certaines choses dépendent de nous, d’autres non. Pour un parent, cette distinction n’invite ni au retrait ni à l’indifférence. Elle aide à déplacer l’énergie vers ce qui peut réellement être travaillé&nbsp;: la qualité du dialogue, la compréhension de l’erreur, l’organisation du travail, la relation avec l’école.</p>
-
-        <blockquote class="philosophy">
-          «&nbsp;Parmi les choses, les unes dépendent de nous, les autres n’en dépendent pas.&nbsp;»
-          <cite>Épictète, <em>Manuel</em>, I</cite>
-        </blockquote>
-
-        <h3>IV. Une décision possible</h3>
-        <div class="decision-grid">
-          <div>
-            <span>Aujourd’hui</span>
-            <p>Écouter le récit de l’enfant sans chercher immédiatement un responsable.</p>
-          </div>
-          <div>
-            <span>Cette semaine</span>
-            <p>Vérifier si la difficulté est isolée ou si elle révèle une tendance.</p>
-          </div>
-          <div>
-            <span>Ensuite</span>
-            <p>Intervenir seulement si cette action augmente sa capacité à comprendre et à agir.</p>
-          </div>
-        </div>
-
-        <section class="sources" aria-labelledby="sourcesTitle">
-          <p class="section-label">Sources et lectures</p>
-          <h3 id="sourcesTitle">Pour approfondir</h3>
-
-          <div id="source-1" class="source-item">
-            <span>Article scientifique</span>
-            <p><strong>Gunderson, E. A. et al. (2013).</strong> «&nbsp;Parent Praise to 1- to 3-Year-Olds Predicts Children’s Motivational Frameworks 5 Years Later&nbsp;», <em>Child Development</em>, 84(5), 1526–1541. DOI&nbsp;: 10.1111/cdev.12064.</p>
-          </div>
-          <div class="source-item">
-            <span>Ouvrage de référence</span>
-            <p><strong>Carol S. Dweck.</strong> <em>Mindset: The New Psychology of Success</em>, Random House, 2006. À lire comme une introduction influente, en gardant à l’esprit les débats sur l’ampleur et la généralisation de certains effets.</p>
-          </div>
-          <div class="source-item">
-            <span>Philosophie</span>
-            <p><strong>Épictète.</strong> <em>Manuel</em>, I. La distinction entre ce qui dépend de nous et ce qui n’en dépend pas constitue ici un outil de clarification, non une prescription éducative universelle.</p>
-          </div>
-        </section>
-
-        <section class="reader-reflection">
-          <p class="section-label">Et vous&nbsp;?</p>
-          <h3>Quelle difficulté avez-vous aujourd’hui le plus envie de faire disparaître pour votre enfant&nbsp;?</h3>
-          <textarea id="reflectionInput" rows="5" placeholder="Écrivez librement. Votre texte reste enregistré sur cet appareil."></textarea>
-          <div class="save-row">
-            <button class="button button-secondary" id="saveReflection">Conserver ma réflexion</button>
-            <span id="saveStatus" aria-live="polite"></span>
-          </div>
-        </section>
-      </article>
-    </section>
-
-    <section id="entretien" class="interview-section">
-      <div class="interview-intro">
-        <p class="section-label">Un entretien de discernement</p>
-        <h2>Si vous le souhaitez,<br>poursuivons cette réflexion ensemble.</h2>
-        <p>Une seule question à la fois. L’objectif n’est pas de répondre trop vite, mais de clarifier les faits, l’inquiétude et la décision qui vous appartient.</p>
-        <button class="button button-light" id="startInterview">Commencer l’entretien</button>
-      </div>
-
-      <div class="interview-card" id="interviewCard" hidden>
-        <div class="interview-topline">
-          <span>ENTRETIEN N° <b id="interviewNumber">01</b></span>
-          <button id="resetInterview">Recommencer</button>
-        </div>
-        <div id="conversation" class="conversation" aria-live="polite"></div>
-        <form id="interviewForm" class="interview-form">
-          <label for="interviewInput" class="sr-only">Votre réponse</label>
-          <textarea id="interviewInput" rows="3" placeholder="Écrivez votre réponse…" required></textarea>
-          <button class="button button-gold" type="submit">Continuer</button>
-        </form>
-      </div>
-    </section>
-
-    <section id="dossier" class="dossier-section" hidden>
-      <div class="dossier-paper">
-        <header>
-          <p>L’INSTITUT</p>
-          <span>Dossier de discernement</span>
-        </header>
-        <h2 id="dossierTitle">Clarifier une situation éducative</h2>
-        <p class="dossier-date" id="dossierDate"></p>
-
-        <div class="dossier-block">
-          <h3>Ce que je retiens de notre entretien</h3>
-          <p id="dossierSummary"></p>
-        </div>
-
-        <div class="dossier-columns">
-          <div>
-            <h3>À observer</h3>
-            <ul>
-              <li>Ce qui est factuel et vérifiable.</li>
-              <li>Ce qui se répète ou, au contraire, reste ponctuel.</li>
-              <li>Ce que votre enfant peut encore tenter par lui-même.</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Avant d’agir</h3>
-            <ul>
-              <li>Nommer l’inquiétude qui vous pousse à intervenir.</li>
-              <li>Vérifier que l’action envisagée augmente l’autonomie.</li>
-              <li>Choisir un premier pas réversible et proportionné.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="dossier-block">
-          <h3>Point d’appui</h3>
-          <p>«&nbsp;Le discernement est une manière de regarder avant d’agir.&nbsp;»</p>
-        </div>
-
-        <div class="dossier-actions no-print">
-          <button class="button button-secondary" id="printDossier">Imprimer ou enregistrer en PDF</button>
-          <a class="button button-primary" href="#rendezvous">Poursuivre en personne</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="rendezvous" class="appointment-section">
+    <section class="manifesto page-grid">
+      <p class="section-number">01</p>
       <div>
-        <p class="section-label">Après l’entretien</p>
-        <h2>Vous pouvez prendre le temps d’y réfléchir.</h2>
-        <p>Et lorsque la situation mérite un échange plus approfondi, l’entretien personnel prolonge naturellement le travail commencé ici.</p>
+        <p class="manifesto-kicker">Notre conviction</p>
+        <blockquote>Les parents ne manquent pas de conseils. Ils manquent d’un lieu où distinguer les faits, les émotions et les décisions.</blockquote>
       </div>
-      <div class="appointment-options">
-        <button class="choice-card" id="closeJourney">
-          <span>01</span>
-          <strong>C’est clair pour moi</strong>
-          <small>Je conserve mon dossier et je prends le temps d’observer.</small>
-        </button>
-        <a class="choice-card" href="mailto:contact@votre-domaine.fr?subject=Demande%20d’entretien%20personnel%20—%20L’Institut">
-          <span>02</span>
-          <strong>Demander un entretien personnel</strong>
-          <small>Le message est préparé dans votre application de courrier.</small>
-        </a>
-      </div>
-      <p class="configuration-note">À personnaliser&nbsp;: remplacez <strong>contact@votre-domaine.fr</strong> dans <code>index.html</code> par votre adresse ou votre lien de réservation.</p>
     </section>
 
-    <section id="bibliotheque" class="library-section">
-      <header>
-        <p class="section-label">La bibliothèque vivante</p>
-        <h2>Des savoirs choisis pour éclairer une décision.</h2>
+    <article id="regard" class="article-shell">
+      <header class="article-header page-grid">
+        <div class="article-meta">
+          <p class="section-number">02</p>
+          <p>Le Regard<br>№ 01</p>
+        </div>
+        <div>
+          <p class="eyebrow">Frustration · Autonomie · Confiance</p>
+          <h2>Faut-il éviter à son enfant toute frustration&nbsp;?</h2>
+          <p class="article-deck">Une déception n’est pas toujours une blessure. Elle peut devenir un lieu d’apprentissage — à condition que l’adulte n’abandonne ni sa présence ni son exigence.</p>
+          <p class="byline">Par Alan Yvon · 12 min de lecture</p>
+        </div>
       </header>
-      <div class="library-grid">
-        <article>
-          <span>FICHE 01</span>
-          <h3>L’échec scolaire</h3>
-          <p>Erreur, attribution, confiance et reprise d’action.</p>
-          <button data-library="echec">Consulter la fiche</button>
-        </article>
-        <article>
-          <span>FICHE 02</span>
-          <h3>L’autorité</h3>
-          <p>Cadre, cohérence, conséquences et dignité.</p>
-          <button data-library="autorite">Consulter la fiche</button>
-        </article>
-        <article>
-          <span>FICHE 03</span>
-          <h3>Les écrans</h3>
-          <p>Usages, rythmes, conflits et règles familiales.</p>
-          <button data-library="ecrans">Consulter la fiche</button>
-        </article>
+
+      <div class="article-body">
+        <section class="prose-section">
+          <h3>La scène</h3>
+          <p class="dropcap">Un élève vient d’apprendre qu’il ne participera pas au voyage qu’il attendait. Sa mère téléphone immédiatement. Elle veut comprendre, corriger, négocier. Je l’écoute. Sa douleur est réelle. Mais une question demeure&nbsp;: devons-nous toujours transformer la déception de l’enfant en problème à résoudre par l’adulte&nbsp;?</p>
+          <p>Il existe une différence décisive entre protéger un enfant d’une injustice et l’empêcher de rencontrer une limite. La première relève de notre responsabilité. La seconde peut, sans que nous le voulions, l’empêcher de construire sa propre capacité d’action.</p>
+        </section>
+
+        <aside class="two-minute">
+          <span class="mini-label">En deux minutes</span>
+          <h3>Ce qu’il faut retenir</h3>
+          <ol>
+            <li>La frustration n’est pas éducative par elle-même.</li>
+            <li>Elle le devient lorsque l’enfant se sent accompagné, mais non remplacé.</li>
+            <li>L’adulte doit distinguer injustice, difficulté et simple contrariété.</li>
+            <li>Le but n’est pas de durcir l’enfant, mais d’élargir son pouvoir d’agir.</li>
+          </ol>
+        </aside>
+
+        <section class="evidence-section">
+          <div class="section-heading">
+            <span>Ce que dit la recherche</span>
+            <h3>Les références ne sont pas des ornements.</h3>
+            <p>Chaque travail est résumé, situé et discuté. Nous indiquons ce qu’il permet d’affirmer — et ce qu’il ne permet pas de conclure.</p>
+          </div>
+
+          <div class="evidence-card">
+            <div class="evidence-index">A</div>
+            <div>
+              <p class="source-type">Étude longitudinale · Autorégulation</p>
+              <h4>Walter Mischel, Yuichi Shoda et Monica Rodriguez</h4>
+              <p class="reference">« Delay of Gratification in Children », <em>Science</em>, 1989.</p>
+              <div class="annotation-grid">
+                <div><h5>La thèse</h5><p>La capacité à différer une gratification est liée à des stratégies d’attention et de représentation. L’enfant ne « résiste » pas seulement par volonté&nbsp;: il apprend à modifier la manière dont il regarde la tentation.</p></div>
+                <div><h5>Passage repère</h5><p class="passage">Les auteurs décrivent comment détourner l’attention ou transformer mentalement l’objet attendu aide l’enfant à patienter.</p></div>
+                <div><h5>La nuance</h5><p>Les travaux ultérieurs ont réduit la portée prédictive de l’expérience initiale&nbsp;: le contexte familial, la confiance et les ressources sociales comptent fortement.</p></div>
+                <div><h5>Ce que nous retenons</h5><p>L’autorégulation s’enseigne par des stratégies concrètes. Il ne s’agit ni de tester ni de juger moralement l’enfant.</p></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="evidence-card">
+            <div class="evidence-index">B</div>
+            <div>
+              <p class="source-type">Psychologie du développement · Motivation</p>
+              <h4>Edward Deci et Richard Ryan</h4>
+              <p class="reference">Théorie de l’autodétermination, travaux synthétisés depuis 1985.</p>
+              <div class="annotation-grid">
+                <div><h5>La thèse</h5><p>La motivation durable se développe lorsque trois besoins sont soutenus&nbsp;: autonomie, sentiment de compétence et qualité du lien.</p></div>
+                <div><h5>Passage repère</h5><p class="passage">Aider n’est pas décider à la place. Le soutien de l’autonomie offre une structure claire tout en laissant une part réelle d’initiative.</p></div>
+                <div><h5>La nuance</h5><p>L’autonomie ne signifie pas absence de cadre. Un environnement chaotique ou indifférent ne favorise pas l’émancipation.</p></div>
+                <div><h5>Ce que nous retenons</h5><p>La bonne question n’est pas « comment éviter la frustration&nbsp;? », mais « quelle part d’action puis-je rendre à l’enfant&nbsp;? »</p></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="evidence-card">
+            <div class="evidence-index">C</div>
+            <div>
+              <p class="source-type">Éducation · Croyances sur l’apprentissage</p>
+              <h4>Carol Dweck</h4>
+              <p class="reference"><em>Mindset: The New Psychology of Success</em>, 2006.</p>
+              <div class="annotation-grid">
+                <div><h5>La thèse</h5><p>La manière d’interpréter l’échec influence l’engagement. Une difficulté peut être comprise comme verdict sur soi ou comme information sur une stratégie à modifier.</p></div>
+                <div><h5>Passage repère</h5><p class="passage">Le mot « encore » déplace le jugement&nbsp;: « je n’y arrive pas » devient « je n’y arrive pas encore ».</p></div>
+                <div><h5>La nuance</h5><p>La popularisation du « growth mindset » a parfois produit des slogans. Encourager l’effort seul ne suffit pas&nbsp;: il faut aussi enseigner des méthodes efficaces.</p></div>
+                <div><h5>Ce que nous retenons</h5><p>L’adulte aide davantage en analysant la stratégie qu’en répétant une injonction abstraite à persévérer.</p></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="texts-section">
+          <div class="section-heading light">
+            <span>Les textes fondateurs</span>
+            <h3>Relire les anciens pour mieux juger le présent.</h3>
+          </div>
+          <div class="founder-text">
+            <div class="quote-mark">“</div>
+            <blockquote>Ce qui trouble les hommes, ce ne sont pas les choses, mais les jugements qu’ils portent sur les choses.</blockquote>
+            <p class="quote-source">Épictète, <em>Manuel</em>, § 5</p>
+            <div class="text-commentary">
+              <div><h5>La thèse</h5><p>Épictète distingue l’événement et le jugement que nous formulons sur lui. Cette distinction ne nie pas la peine&nbsp;: elle rend à chacun une marge de liberté intérieure.</p></div>
+              <div><h5>L’usage éducatif</h5><p>Devant la déception, l’adulte peut aider l’enfant à nommer trois choses séparément&nbsp;: ce qui s’est passé, ce qu’il ressent et ce qu’il peut maintenant décider.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="objections-section">
+          <p class="eyebrow">Les objections</p>
+          <h3>On pourrait objecter que…</h3>
+          <details open><summary>La frustration peut aussi fragiliser.</summary><p>Oui. Lorsqu’elle est répétée, humiliante ou vécue sans soutien, elle ne fortifie pas&nbsp;: elle peut installer impuissance et retrait. La présence de l’adulte et la proportion de l’épreuve sont déterminantes.</p></details>
+          <details><summary>Les institutions utilisent parfois « l’autonomie » pour ne pas agir.</summary><p>Exact. Demander à un enfant de « gérer » une situation injuste peut être une manière de se défausser. Le discernement commence par une enquête sur les faits.</p></details>
+          <details><summary>Tous les enfants n’ont pas les mêmes ressources.</summary><p>Exact encore. Le tempérament, l’âge, le handicap, l’histoire relationnelle et le contexte social modifient profondément ce qui est supportable et fécond.</p></details>
+        </section>
+
+        <section class="conclusion-section">
+          <p class="section-number">03</p>
+          <div>
+            <p class="eyebrow">Ce que L’Institut retient</p>
+            <h3>Accompagner sans confisquer.</h3>
+            <p>Éduquer ne consiste ni à supprimer les obstacles ni à abandonner l’enfant devant eux. Il s’agit de lui prêter momentanément notre calme, notre langage et notre méthode — puis de lui rendre sa part de décision.</p>
+            <div class="decision-box">
+              <p>Avant d’intervenir, posez trois questions&nbsp;:</p>
+              <ol><li>Y a-t-il une injustice à réparer&nbsp;?</li><li>Quelle compétence cette situation peut-elle faire grandir&nbsp;?</li><li>Quelle action l’enfant peut-il accomplir lui-même&nbsp;?</li></ol>
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <section id="methode" class="method page-grid">
+      <div>
+        <p class="section-number">04</p>
+        <p class="eyebrow">La méthode de L’Institut</p>
+        <h2>Comprendre avant d’agir.</h2>
+      </div>
+      <div class="method-steps">
+        <div><span>1</span><h3>Partir d’une scène réelle</h3><p>Une situation vécue, débarrassée de ses détails identifiants.</p></div>
+        <div><span>2</span><h3>Établir les faits</h3><p>Distinguer observation, interprétation et émotion.</p></div>
+        <div><span>3</span><h3>Interroger les travaux</h3><p>Résumer les thèses, préciser les limites et signaler les controverses.</p></div>
+        <div><span>4</span><h3>Décider avec mesure</h3><p>Formuler une décision praticable, proportionnée et révisable.</p></div>
       </div>
     </section>
 
-    <section id="manifeste" class="manifesto-section">
-      <p class="section-label">Le manifeste</p>
-      <h2>L’éducation ne manque pas de conseils.<br>Elle manque de discernement.</h2>
-      <div class="manifesto-grid">
-        <p>Nous distinguons ce qui relève de la recherche, de l’expérience professionnelle et de l’interprétation.</p>
-        <p>Nous préférons une question juste à une certitude prématurée.</p>
-        <p>Nous n’aidons pas les parents à décider moins. Nous les aidons à décider plus librement.</p>
+    <section id="bibliotheque" class="library">
+      <div class="page-grid library-head">
+        <div><p class="section-number">05</p><p class="eyebrow">Bibliothèque annotée</p></div>
+        <div><h2>Des ouvrages à lire,<br>pas seulement à citer.</h2><p>Chaque notice précise la thèse, le passage utile, les limites et les raisons de sa présence dans L’Institut.</p></div>
       </div>
+      <div class="library-grid page-grid">
+        <article><p class="tag">Classique</p><h3>Épictète</h3><p><em>Manuel</em></p><span>Jugement, maîtrise, liberté intérieure.</span></article>
+        <article><p class="tag">Recherche</p><h3>Deci & Ryan</h3><p><em>Self-Determination Theory</em></p><span>Autonomie, compétence, relation.</span></article>
+        <article><p class="tag">À discuter</p><h3>Carol Dweck</h3><p><em>Mindset</em></p><span>Échec, stratégie, persévérance.</span></article>
+        <article><p class="tag">Approfondir</p><h3>Hannah Arendt</h3><p><em>La crise de la culture</em></p><span>Autorité, transmission, monde commun.</span></article>
+      </div>
+    </section>
+
+    <section id="entretien" class="interview page-grid">
+      <div class="interview-copy">
+        <p class="section-number">06</p>
+        <p class="eyebrow">Entretien de discernement</p>
+        <h2>Une décision vous résiste&nbsp;?</h2>
+        <p>L’entretien vous aide à clarifier une situation en séparant les faits, les émotions, les responsabilités et les options.</p>
+      </div>
+      <form class="interview-form" id="discernment-form">
+        <label for="situation">En une phrase, quelle situation vous préoccupe&nbsp;?</label>
+        <textarea id="situation" placeholder="Ex. Mon enfant refuse désormais d’aller au collège…" required></textarea>
+        <button type="submit">Commencer l’entretien <span>→</span></button>
+        <p class="form-note">Votre texte reste sur cet appareil. Aucun envoi n’est effectué dans cette version.</p>
+      </form>
     </section>
   </main>
 
-  <dialog id="libraryDialog">
-    <button class="dialog-close" id="dialogClose" aria-label="Fermer">×</button>
-    <p class="section-label" id="dialogLabel"></p>
-    <h2 id="dialogTitle"></h2>
-    <div id="dialogContent"></div>
-  </dialog>
-
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <footer class="site-footer">
-    <a class="wordmark" href="#accueil">L’INSTITUT</a>
-    <p>Expérience · recherche · dialogue</p>
-    <small>Prototype V3 — Édition fondatrice</small>
+  <footer>
+    <div class="brand-footer">L’INSTITUT</div>
+    <p>L’expérience du terrain. La force des textes. L’exigence de la recherche.</p>
+    <p>© 2026 L’Institut · Édition fondatrice V3.1</p>
   </footer>
+
+  <dialog id="interview-dialog">
+    <button class="dialog-close" aria-label="Fermer">×</button>
+    <p class="eyebrow">Première clarification</p>
+    <h2>Que savez-vous avec certitude&nbsp;?</h2>
+    <p id="situation-recap"></p>
+    <textarea id="facts" placeholder="Écrivez uniquement les faits observables, sans expliquer les intentions…"></textarea>
+    <button class="primary-cta dialog-action">Poursuivre plus tard</button>
+    <p class="form-note">La version complète de l’entretien sera développée en V3.2.</p>
+  </dialog>
 
   <script src="app.js"></script>
 </body>
