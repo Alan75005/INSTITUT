@@ -14,7 +14,7 @@ Version éditoriale fondatrice, prête pour GitHub et Cloudflare Pages.
 - `index.html` : contenu et structure
 - `styles.css` : direction artistique et responsive
 - `app.js` : menu mobile et amorce d’entretien
-- `assets/alan-yvon.jpg` : portrait intégré
+- `alan-yvon.jpg` : portrait intégré
 
 ## V3.1
 
