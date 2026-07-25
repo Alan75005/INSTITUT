@@ -1,26 +1,17 @@
-# L’Institut — V4
+# L’Institut — V5 / Édition inaugurale
 
-Édition fondatrice de la revue du discernement éducatif.
+Site statique prêt pour GitHub et Cloudflare Pages.
 
-## Déploiement GitHub / Cloudflare Pages
+## Déploiement
 
-Décompresser le ZIP, puis envoyer **les fichiers eux-mêmes** à la racine du dépôt GitHub :
+Téléverser **le contenu décompressé** de ce dossier à la racine du dépôt :
 
-- `index.html`
-- `styles.css`
-- `app.js`
-- `alan-yvon.jpg`
-- `favicon.svg`
-- `_headers`
+- index.html
+- manifeste.html
+- regard-frustration.html
+- styles.css
+- app.js
+- alan-yvon.jpg
+- _headers
 
-Ne pas envoyer uniquement le ZIP. Cloudflare Pages redéploie automatiquement après le commit sur `main`.
-
-## Vérification de la photo
-
-Dans `index.html`, la photo est appelée par :
-
-```html
-<img src="alan-yvon.jpg" alt="Portrait d’Alan Yvon">
-```
-
-Le fichier `alan-yvon.jpg` se trouve au même niveau que `index.html`.
+La photo est appelée directement par `src="alan-yvon.jpg"`.
