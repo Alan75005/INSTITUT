@@ -1,29 +1,26 @@
-# L’Institut — V3.1
+# L’Institut — V4
 
-Version éditoriale fondatrice, prête pour GitHub et Cloudflare Pages.
+Édition fondatrice de la revue du discernement éducatif.
 
-## Mise en ligne
+## Déploiement GitHub / Cloudflare Pages
 
-1. Décompresser le ZIP.
-2. Dans le dépôt GitHub, remplacer les anciens fichiers par tout le contenu de ce dossier.
-3. Valider avec **Commit changes**.
-4. Cloudflare Pages redéploie automatiquement le dernier commit.
+Décompresser le ZIP, puis envoyer **les fichiers eux-mêmes** à la racine du dépôt GitHub :
 
-## Fichiers
+- `index.html`
+- `styles.css`
+- `app.js`
+- `alan-yvon.jpg`
+- `favicon.svg`
+- `_headers`
 
-- `index.html` : contenu et structure
-- `styles.css` : direction artistique et responsive
-- `app.js` : menu mobile et amorce d’entretien
-- `alan-yvon.jpg` : portrait intégré
+Ne pas envoyer uniquement le ZIP. Cloudflare Pages redéploie automatiquement après le commit sur `main`.
 
-## V3.1
+## Vérification de la photo
 
-- portrait circulaire discret
-- nouvelle page d’accueil
-- premier Regard complet
-- références scientifiques annotées
-- passages repères et synthèses de thèses
-- objections et nuances
-- méthode de L’Institut
-- bibliothèque annotée
-- entretien de discernement local
+Dans `index.html`, la photo est appelée par :
+
+```html
+<img src="alan-yvon.jpg" alt="Portrait d’Alan Yvon">
+```
+
+Le fichier `alan-yvon.jpg` se trouve au même niveau que `index.html`.
