@@ -53,3 +53,65 @@ button,a{touch-action:manipulation}.menu,.begin,.save,.close{min-height:44px}.ma
 .practice-box{margin:80px calc(50% - 50vw);padding:75px max(24px,calc((100vw - 1050px)/2));background:var(--ink);color:var(--ivory)}.practice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:35px}.practice-grid h3{margin:0 0 15px;font:400 2.2rem var(--display);color:#d8b878}.practice-grid p{margin:0!important;color:#e7e2d8}
 .bibliography{margin:30px 0 60px;padding-left:1.3rem}.bibliography li{margin:.8rem 0}.longform h2{margin-top:3.1em}.longform h3{margin-top:2em}
 @media(max-width:760px){.essay-opening-art{margin-top:48px}.dialogue{margin-left:0}.practice-grid{grid-template-columns:1fr}.practice-box{padding-top:55px;padding-bottom:55px}.method-list li{padding-left:55px}.story-opening{margin-bottom:50px}}
+
+
+/* V1.0.3 — À propos : portrait institutionnel, non monumental */
+.portrait{
+  width:100%;
+  max-width:280px;
+  aspect-ratio:1 / 1;
+  margin:0;
+}
+.portrait img{
+  width:100%;
+  height:100%;
+  aspect-ratio:auto;
+  border-radius:50%;
+  object-fit:cover;
+  object-position:50% 24%;
+  padding:6px;
+}
+
+@media (max-width:900px){
+  .about-section{padding-top:82px;padding-bottom:86px}
+  .about-inner{
+    max-width:680px;
+    grid-template-columns:132px minmax(0,1fr);
+    gap:30px;
+    text-align:left;
+    align-items:start;
+  }
+  .portrait{
+    width:132px;
+    max-width:none;
+    margin:6px 0 0;
+  }
+  .about-copy h2{
+    margin-top:.18em;
+    font-size:clamp(2.75rem,9vw,4rem);
+  }
+}
+
+@media (max-width:560px){
+  .about-section{padding-top:64px;padding-bottom:72px}
+  .about-inner{
+    grid-template-columns:92px minmax(0,1fr);
+    gap:20px;
+  }
+  .portrait{
+    width:92px;
+    margin-top:5px;
+  }
+  .portrait img{padding:4px}
+  .about-copy .eyebrow{margin-top:0}
+  .about-copy h2{
+    font-size:clamp(2.25rem,10.5vw,3.1rem);
+    line-height:1.02;
+  }
+  .about-copy h2 br{display:none}
+  .about-copy p{
+    font-size:1rem;
+    line-height:1.62;
+  }
+  .about-copy p:not(.eyebrow){grid-column:1/-1}
+}

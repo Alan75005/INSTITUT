@@ -27,3 +27,6 @@ Les reproductions patrimoniales et le portrait sont désormais intégrés direct
 ## Correctif 1.0.2 — Safari iPhone
 
 Les œuvres picturales sont servies comme de vrais fichiers JPEG dans `assets/art/`. Les longues URI Base64 ont été supprimées afin d’assurer leur affichage fiable dans Safari iOS, GitHub et Cloudflare Pages.
+
+## Correctif 1.0.3 — portrait mobile
+Le portrait de la page d’accueil utilise désormais le fichier `alan-yvon.jpg` plutôt qu’une donnée Base64. Le bloc « À propos » a été recomposé sur mobile avec un portrait circulaire discret (92 px sur iPhone), placé à côté du titre, afin que le contenu reste visible dès le premier écran.
