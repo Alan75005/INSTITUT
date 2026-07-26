@@ -34,3 +34,7 @@ Le portrait de la page d’accueil utilise désormais le fichier `alan-yvon.jpg`
 
 ## V1.1 — Les Regards
 Ajout d’un index `regards.html`, de trois nouveaux Regards et d’un sous-menu complet dans la navigation.
+
+
+## V1.1.1
+Séparation éditoriale entre **Les Regards** (essais éducatifs) et **Le regard de l’art** (lectures d’œuvres). Ajout de quatre nouveaux Regards thématiques.
