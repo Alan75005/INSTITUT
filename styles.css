@@ -171,3 +171,20 @@ button,a{touch-action:manipulation}.menu,.begin,.save,.close{min-height:44px}.ma
 .regard-cover-hero{position:relative;min-height:82svh;display:flex;align-items:flex-end;overflow:hidden;color:#fff}.regard-cover-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:saturate(.8)}.regard-cover-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,12,9,.88),rgba(8,12,9,.1) 68%),linear-gradient(90deg,rgba(8,12,9,.52),transparent 70%)}.regard-cover-copy{position:relative;z-index:2;width:min(1180px,100%);padding:clamp(120px,15vw,210px) clamp(24px,7vw,100px) clamp(55px,8vw,100px)}.regard-cover-copy h1{font:400 clamp(4rem,9vw,9rem)/.88 var(--display);letter-spacing:-.045em;margin:.18em 0;max-width:1050px}.regard-cover-copy .article-lead{color:#fff;max-width:760px;font-size:clamp(1.12rem,2vw,1.45rem)}
 @media(max-width:900px){.edition-v82 .cover-mast{position:absolute}.front-grid{grid-template-columns:1fr}.lead-story{grid-row:auto}.lead-story img{aspect-ratio:4/3}.illustrated-regard-card{grid-template-columns:1fr!important}.illustrated-regard-card>img{height:min(62vw,430px)}.illustrated-regard-card>div{padding:12px 8px 55px}.cover-edition{top:105px}.cover-copy h1{line-height:.84}.cover-credit{display:none}}@media(max-width:650px){.cover-edition span:last-child{display:none}.cover-actions{align-items:flex-start;flex-direction:column;gap:18px}.cover-copy{padding-bottom:55px}.regard-cover-hero{min-height:76svh}.regard-cover-copy h1{font-size:clamp(3.6rem,17vw,6rem)}}
 @media(prefers-reduced-motion:reduce){.magazine-cover>img{animation:none}}
+
+
+/* V8.3 — correctifs Bibliothèque */
+.collection-card-link{display:block;color:inherit;text-decoration:none;cursor:pointer}
+.collection-card-link:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+.collection-card-link:hover .collection-question{text-decoration-thickness:1px;text-underline-offset:6px}
+
+@media(max-width:720px){
+  .collections-section{padding-left:20px;padding-right:20px}
+  .collection-card{min-height:0;padding:32px 26px 30px;display:flex;flex-direction:column}
+  .collection-card h2{max-width:82%;margin-bottom:20px}
+  .collection-desc{min-height:0;margin-bottom:6px}
+  .collection-tags{margin-top:24px}
+  .collection-question{margin:28px 0 0;padding:0 0 18px;font-size:clamp(1.28rem,6vw,1.65rem);line-height:1.35}
+  .collection-status{position:static;left:auto;right:auto;bottom:auto;margin-top:auto;min-height:45px;align-items:center}
+  .collection-number{right:24px;top:28px}
+}

@@ -24,3 +24,8 @@ Le Précepteur est un moteur local de discernement en trois étapes. Il ne trans
 - Regards présentés comme analyses de situations éducatives illustrées.
 - Titres des cinq Regards principaux placés en surimpression sur une œuvre classique.
 - Navigation et mentions de version harmonisées.
+
+
+## V8.3 — Correctifs
+- Correction des superpositions dans les cartes de la Bibliothèque sur mobile.
+- La collection « Apprendre » est désormais entièrement cliquable et ouvre le dossier publié.
