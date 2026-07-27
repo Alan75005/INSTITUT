@@ -1,20 +1,14 @@
 const menu = document.querySelector('.menu');
 const nav = document.querySelector('#nav');
 if (menu && nav) {
-  const closeMenu = () => {
-    nav.classList.remove('open');
-    document.body.classList.remove('menu-open');
-    menu.setAttribute('aria-expanded', 'false');
-  };
   menu.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
-    document.body.classList.toggle('menu-open', open);
     menu.setAttribute('aria-expanded', String(open));
   });
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') closeMenu();
-  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menu.setAttribute('aria-expanded', 'false');
+  }));
 }
 const dialog = document.querySelector('#discernment-dialog');
 document.querySelector('[data-dialog-open]')?.addEventListener('click', () => dialog?.showModal());

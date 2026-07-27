@@ -1,31 +1,16 @@
-# L’École des Parents — V8.0 stable
+# L’École des Parents — V8.1 Édition stable
 
-Version statique conçue pour GitHub + Cloudflare Pages.
+Version statique prête pour GitHub et Cloudflare Pages.
+
+## Évolutions
+- Précepteur local en cinq étapes : faits, émotions, jugements, maîtrise et action.
+- Retour à l’étape précédente, compteur de caractères et impression de la carte de discernement.
+- Galerie éditoriale de quatre œuvres dans la Bibliothèque.
+- Navigation active, métadescriptions et accessibilité renforcées.
+- Aucun fichier `_redirects` : Cloudflare Pages sert directement les fichiers HTML.
 
 ## Déploiement
+Déposer le contenu de cette archive à la racine de la branche `main`. Build output : `.` ; root directory vide.
 
-- Dépôt : branche `main`
-- Commande de build : aucune
-- Répertoire racine : vide
-- Répertoire de sortie : `.`
-- Aucun fichier `_redirects` n’est nécessaire.
-
-## Pages à tester
-
-- `index.html`
-- `precepteur.html`
-- `bibliotheque.html#collections`
-
-Le Précepteur est un moteur local de discernement en trois étapes. Il ne transmet aucune donnée et ne constitue pas encore une IA connectée.
-
-
-## Version 8.2
-- Page d’accueil transformée en couverture de revue sur chef-d’œuvre classique.
-- Regards présentés comme analyses de situations éducatives illustrées.
-- Titres des cinq Regards principaux placés en surimpression sur une œuvre classique.
-- Navigation et mentions de version harmonisées.
-
-
-## V8.3 — Correctifs
-- Correction des superpositions dans les cartes de la Bibliothèque sur mobile.
-- La collection « Apprendre » est désormais entièrement cliquable et ouvre le dossier publié.
+## Limite
+Le Précepteur est un outil local fondé sur des règles. Il n’envoie aucune donnée et ne constitue ni une IA distante, ni un diagnostic médical ou psychologique.

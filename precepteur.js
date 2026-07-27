@@ -1,7 +1,7 @@
 (() => {
+  'use strict';
   const form = document.getElementById('advisorForm');
   if (!form) return;
-
   const input = document.getElementById('situation');
   const intro = document.getElementById('advisorIntro');
   const result = document.getElementById('advisorResult');
@@ -10,115 +10,32 @@
   const stepLabel = document.getElementById('advisorStepLabel');
   const question = document.getElementById('advisorQuestion');
   const submit = document.getElementById('advisorSubmit');
+  const back = document.getElementById('advisorBack');
   const messages = document.getElementById('advisorMessages');
-
+  const count = document.getElementById('charCount');
   const answers = [];
   const prompts = [
-    {
-      label: 'Que s’est-il passé ?',
-      placeholder: 'Décrivez un épisode précis : qui était présent, ce qui a été dit ou fait, et ce qui vous inquiète.',
-      button: 'Continuer'
-    },
-    {
-      label: 'Qu’avez-vous observé directement, sans interprétation ?',
-      placeholder: 'Par exemple : « il a refusé d’ouvrir son cahier trois soirs de suite » plutôt que « il est devenu paresseux ».',
-      button: 'Continuer'
-    },
-    {
-      label: 'Qu’avez-vous déjà essayé, et avec quel effet ?',
-      placeholder: 'Décrivez une action concrète et la réaction observée.',
-      button: 'Établir le discernement'
-    }
+    ['Décrivez un épisode précis.', 'Qui était présent ? Qu’a-t-on vu ou entendu ? À quel moment ?', 'Continuer'],
+    ['Quels faits pourriez-vous rapporter sans employer d’adjectif ?', 'Exemple : « il a fermé son cahier trois soirs de suite » plutôt que « il est paresseux ».', 'Continuer'],
+    ['Quelle émotion cette situation fait-elle naître chez vous ?', 'Inquiétude, colère, impuissance, honte, tristesse… Nommez-la et dites ce qu’elle vous pousse à faire.', 'Continuer'],
+    ['Quelle conclusion tirez-vous actuellement ?', 'Exemple : « il ne respecte plus rien », « je suis un mauvais parent », « l’école ne fait rien ».', 'Continuer'],
+    ['Qu’avez-vous déjà essayé et qu’avez-vous observé ensuite ?', 'Décrivez une action concrète et son effet, même minime.', 'Établir la carte']
   ];
   let step = 0;
-
   const themes = [
-    { key: /téléphone|portable|écran|jeu|réseau/i, name: 'les écrans', action: 'Fixez un temps bref de discussion hors conflit. Partez d’un usage observable, convenez d’une règle testable pendant sept jours, puis réévaluez-la ensemble.' },
-    { key: /travail|devoir|note|école|collège|lycée|cours/i, name: 'le travail scolaire', action: 'Séparez la question du travail de celle de la valeur personnelle. Choisissez un objectif très limité pour les trois prochains jours et vérifiez d’abord l’existence d’un obstacle concret.' },
-    { key: /angoiss|anxi|isol|triste|pleur|peur/i, name: 'l’anxiété ou l’isolement', action: 'Ouvrez un échange sans exiger d’explication immédiate. Si les signes persistent, s’intensifient ou affectent le sommeil, l’alimentation ou la sécurité, sollicitez rapidement un professionnel.' },
-    { key: /limite|autorité|obéi|colère|insulte|conflit/i, name: 'l’autorité et les limites', action: 'Formulez une seule limite, sa raison et sa conséquence prévisible. Évitez de renégocier au cœur de la crise ; revenez-y ensuite, lorsque chacun a retrouvé son calme.' }
+    {re:/téléphone|portable|écran|jeu|réseau|tiktok|instagram/i, risk:'Une escalade du conflit, la privation de sommeil ou un usage qui isole durablement.', action:'Proposez un entretien de quinze minutes hors conflit. Partez d’un usage observable, convenez d’une règle testable pendant sept jours et fixez dès maintenant la date de réévaluation.', links:[['regard-attention.html','Lire : Retrouver l’attention'],['dialogue-telephone.html','Dialogue : Le téléphone']]},
+    {re:/travail|devoir|note|école|collège|lycée|cours|cahier/i, risk:'La confusion entre difficulté scolaire et valeur personnelle, ou l’existence d’un obstacle non identifié.', action:'Choisissez un objectif très limité pour les trois prochains jours. Demandez d’abord : « Qu’est-ce qui rend le travail difficile en ce moment ? » puis convenez d’un seul essai observable.', links:[['regard-echec.html','Lire : Traverser l’échec'],['carnet-eleve-19.html','Carnet : La vie de l’élève']]},
+    {re:/angoiss|anxi|isol|triste|pleur|peur|dort|sommeil/i, risk:'Une aggravation, une atteinte au sommeil, à l’alimentation, à la fréquentation scolaire ou à la sécurité.', action:'Ouvrez un échange sans exiger d’explication immédiate. Dites ce que vous observez et proposez un rendez-vous avec un professionnel si les signes persistent, s’intensifient ou touchent la sécurité.', links:[['regard-courage.html','Lire : Le courage juste'],['regard-temps-long.html','Lire : Le temps long']]},
+    {re:/limite|autorité|obéi|colère|insulte|conflit|crise/i, risk:'Une règle changeante, une conséquence disproportionnée ou un dialogue tenté au sommet de la crise.', action:'Formulez une seule limite, sa raison et une conséquence prévisible. Négociez les modalités, non le principe, puis revenez-y lorsque chacun a retrouvé son calme.', links:[['distinction-autorite.html','Distinguer : Autorité et domination'],['regard-autorite.html','Lire : L’autorité']]}
   ];
-
-  function addMessage(text, role) {
-    const p = document.createElement('p');
-    p.className = `advisor-message ${role}`;
-    p.textContent = text;
-    messages.appendChild(p);
-  }
-
-  function updateProgress() {
-    progress.hidden = false;
-    stepLabel.textContent = `Étape ${Math.min(step + 1, 3)} sur 3`;
-    progressBar.style.width = `${Math.min(((step + 1) / 3) * 100, 100)}%`;
-  }
-
-  function setPrompt() {
-    const current = prompts[step];
-    question.innerHTML = current.label;
-    input.placeholder = current.placeholder;
-    submit.textContent = current.button;
-    input.value = '';
-    input.focus();
-    updateProgress();
-  }
-
-  function buildResult() {
-    const full = answers.join(' ');
-    const theme = themes.find(t => t.key.test(full));
-    const themeName = theme ? theme.name : 'la situation décrite';
-    const action = theme ? theme.action : 'Choisissez un moment calme. Décrivez un seul fait sans accusation, dites ce que vous cherchez à comprendre, puis proposez une action limitée et réversible.';
-
-    document.getElementById('factsText').textContent = `Vous décrivez ${themeName}. Le récit initial est : « ${answers[0]} » L’observation la plus directement vérifiable est : « ${answers[1]} »`;
-    document.getElementById('judgmentText').textContent = 'Votre interprétation peut être juste, mais elle reste une hypothèse tant qu’elle n’a pas été confrontée aux faits et au point de vue de votre enfant. Évitons de transformer une conduite en identité.';
-    document.getElementById('controlText').textContent = 'Vous pouvez choisir le moment, le ton, la précision de votre demande, la cohérence de la limite et le recours à une aide extérieure. Vous pouvez également modifier une stratégie qui n’a pas produit l’effet attendu.';
-    document.getElementById('outsideText').textContent = 'Vous ne contrôlez ni l’adhésion immédiate de votre enfant, ni son émotion, ni la rapidité du changement. Une réponse juste peut produire d’abord de la résistance.';
-    document.getElementById('questionText').textContent = 'Quelle explication votre enfant donnerait-il de cette scène, même si cette explication vous paraît incomplète ou injuste ?';
-    document.getElementById('actionText').textContent = action;
-
-    form.hidden = true;
-    progress.hidden = true;
-    result.hidden = false;
-    result.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  document.querySelectorAll('.situation-chips button').forEach(button => {
-    button.addEventListener('click', () => {
-      input.value = button.dataset.text || '';
-      input.focus();
-    });
-  });
-
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    const value = input.value.trim();
-    if (!value) {
-      input.focus();
-      return;
-    }
-
-    answers.push(value);
-    addMessage(value, 'parent');
-
-    if (step === 0) {
-      intro.hidden = true;
-      addMessage('Merci. Séparons maintenant ce que vous avez observé de ce que vous en concluez.', 'preceptor');
-    } else if (step === 1) {
-      addMessage('C’est plus précis. Regardons enfin ce que vous avez déjà tenté et l’effet obtenu.', 'preceptor');
-    }
-
-    step += 1;
-    if (step < prompts.length) setPrompt();
-    else buildResult();
-  });
-
-  document.getElementById('restartAdvisor').addEventListener('click', () => {
-    answers.length = 0;
-    step = 0;
-    messages.innerHTML = '';
-    result.hidden = true;
-    intro.hidden = false;
-    form.hidden = false;
-    setPrompt();
-    progress.hidden = true;
-  });
+  function addMessage(text, role){const p=document.createElement('p');p.className=`advisor-message ${role}`;p.textContent=text;messages.appendChild(p);}
+  function renderPrompt(){const p=prompts[step];question.textContent=p[0];input.placeholder=p[1];submit.textContent=p[2];input.value=answers[step]||'';count.textContent=`${input.value.length} / 1200`;stepLabel.textContent=`Étape ${step+1} sur 5`;progressBar.style.width=`${((step+1)/5)*100}%`;progress.hidden=false;back.hidden=step===0;input.focus();}
+  function firstSentence(text){const cleaned=text.replace(/\s+/g,' ').trim();return cleaned.length>260?cleaned.slice(0,257)+'…':cleaned;}
+  function buildResult(){const full=answers.join(' ');const theme=themes.find(t=>t.re.test(full));const emotion=firstSentence(answers[2]);const judgment=firstSentence(answers[3]);document.getElementById('factsText').textContent=firstSentence(answers[1]);document.getElementById('emotionText').textContent=emotion||'L’émotion n’a pas été précisée.';document.getElementById('judgmentText').textContent=`« ${judgment} » est une interprétation à examiner, non un fait définitivement établi.`;document.getElementById('controlText').textContent='Le moment et le ton du dialogue, la précision de votre observation, la cohérence de la règle, votre capacité à demander de l’aide et à réviser une stratégie inefficace.';document.getElementById('outsideText').textContent='La réaction immédiate de votre enfant, son rythme d’évolution, ce qu’il pense et ressent, ainsi que les décisions prises par d’autres adultes.';document.getElementById('riskText').textContent=theme?theme.risk:'La répétition du conflit, l’épuisement de chacun ou la présence d’un facteur que le récit ne permet pas encore d’identifier.';document.getElementById('actionText').textContent=theme?theme.action:'Choisissez un moment calme. Décrivez un seul fait, formulez une question ouverte et proposez une action limitée que vous pourrez réévaluer dans quelques jours.';const box=document.getElementById('resourceLinks');box.innerHTML='';const links=theme?theme.links:[['regard-frustration.html','Lire : La frustration'],['bibliotheque.html#collections','Explorer la Bibliothèque']];links.forEach(([href,label])=>{const a=document.createElement('a');a.href=href;a.textContent=label;box.appendChild(a);});form.hidden=true;progress.hidden=true;intro.hidden=true;result.hidden=false;result.scrollIntoView({behavior:'smooth',block:'start'});}
+  form.addEventListener('submit',e=>{e.preventDefault();const value=input.value.trim();if(value.length<8){input.setCustomValidity('Décrivez la situation en quelques mots supplémentaires.');input.reportValidity();return;}input.setCustomValidity('');answers[step]=value;addMessage(value,'parent');addMessage(step===4?'Merci. Je rassemble maintenant les éléments de votre discernement.':prompts[step+1][0],'preceptor');if(step<4){step++;renderPrompt();}else buildResult();});
+  back.addEventListener('click',()=>{if(step===0)return;step--;messages.lastElementChild?.remove();messages.lastElementChild?.remove();renderPrompt();});
+  input.addEventListener('input',()=>count.textContent=`${input.value.length} / 1200`);
+  document.querySelectorAll('[data-text]').forEach(b=>b.addEventListener('click',()=>{input.value=b.dataset.text;count.textContent=`${input.value.length} / 1200`;input.focus();}));
+  document.getElementById('restartAdvisor').addEventListener('click',()=>{answers.length=0;step=0;messages.innerHTML='';result.hidden=true;form.hidden=false;intro.hidden=false;renderPrompt();window.scrollTo({top:document.querySelector('.advisor-shell').offsetTop-90,behavior:'smooth'});});
+  document.getElementById('printAdvisor').addEventListener('click',()=>window.print());
 })();
