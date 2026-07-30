@@ -34,3 +34,9 @@
 .official-signature p{margin:0;line-height:1.55}
 .official-signature strong{font-family:var(--font-serif,Georgia,serif);font-size:1.25rem}
 .official-signature span{font-size:.96rem;color:var(--muted,#53606b)}
+
+/* V6.2.9 — liens éditoriaux et image partenaire */
+.editorial-article .ircs-link a{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1rem;border:1px solid currentColor;border-radius:999px;font-weight:700;text-decoration:none}
+.editorial-article .ircs-link a::after{content:"↗"}
+.editorial-article .editorial-image{margin:2rem 0 0}
+.editorial-article .editorial-image img{display:block;max-width:300px;width:100%;height:auto}
