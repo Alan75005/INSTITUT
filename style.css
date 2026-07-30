@@ -1,0 +1,7 @@
+
+/* V6.2.4 — menu reproduit sans rubriques ajoutées */
+.original-menu-panel .mega-links{width:100%;}
+.original-menu-panel .mega-links a i{display:none;}
+.original-drawer-top{justify-content:flex-end;}
+.original-drawer-top .drawer-close{margin-left:auto;}
+@media (max-width:1180px){.desktop-nav{display:none!important;}}

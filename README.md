@@ -1,16 +1,11 @@
-# L’École des Parents — V8.1 Édition stable
+# Collège Sévigné — V6.2.2
 
-Version statique prête pour GitHub et Cloudflare Pages.
+Progression réelle vers la reprise fidèle et in extenso.
 
-## Évolutions
-- Précepteur local en cinq étapes : faits, émotions, jugements, maîtrise et action.
-- Retour à l’étape précédente, compteur de caractères et impression de la carte de discernement.
-- Galerie éditoriale de quatre œuvres dans la Bibliothèque.
-- Navigation active, métadescriptions et accessibilité renforcées.
-- Aucun fichier `_redirects` : Cloudflare Pages sert directement les fichiers HTML.
+Pages intégrées et contrôlées dans cette livraison :
+- Présentation du Collège Sévigné (contenu intégral public repris)
+- Le mot du chef d’établissement (contenu intégral public repris)
 
-## Déploiement
-Déposer le contenu de cette archive à la racine de la branche `main`. Build output : `.` ; root directory vide.
+Le bloc-signature automatique de fin de page reste supprimé. La devise n’est conservée que lorsqu’elle appartient au contenu source d’une page.
 
-## Limite
-Le Précepteur est un outil local fondé sur des règles. Il n’envoie aucune donnée et ne constitue ni une IA distante, ni un diagnostic médical ou psychologique.
+Les autres pages restent celles de la V6.2.1 et doivent encore être remplacées par leur contenu source intégral.
